@@ -31,7 +31,7 @@ class BC_Trainer(object):
         ################
 
         print("1 batch size: ", self.params['batch_size'])
-        self.rl_trainer = RL_Trainer(self.params)   ## TODO: look in here and implement this
+        self.rl_trainer = RL_Trainer(self.params)
 
         #######################
         ## LOAD EXPERT POLICY
