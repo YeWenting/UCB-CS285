@@ -23,14 +23,15 @@ class BC_Trainer(object):
             }
 
         self.params = params
-        self.params['agent_class'] = BCAgent ## TODO: look in here and implement this
+        self.params['agent_class'] = BCAgent
         self.params['agent_params'] = agent_params
 
         ################
         ## RL TRAINER
         ################
 
-        self.rl_trainer = RL_Trainer(self.params) ## TODO: look in here and implement this
+        print("1 batch size: ", self.params['batch_size'])
+        self.rl_trainer = RL_Trainer(self.params)   ## TODO: look in here and implement this
 
         #######################
         ## LOAD EXPERT POLICY
@@ -41,6 +42,7 @@ class BC_Trainer(object):
         print('Done restoring expert policy...')
 
     def run_training_loop(self):
+        print("do dagger: ", self.params['do_dagger'])
 
         self.rl_trainer.run_training_loop(
             n_iter=self.params['n_iter'],
